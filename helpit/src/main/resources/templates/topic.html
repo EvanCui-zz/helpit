@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Topic</title>
+    <link rel="shortcut icon" th:href="@{assets/img/logo.png}">
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/custom.css}">
+<!--    <link rel="stylesheet" th:href="@{css/loading.css}">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script th:src="@{js/jquery-3.4.1.min.js}"></script>
+    <script th:src="@{js/jquery.session.js}"></script>
+    <script type="text/javascript" th:src="@{js/popper.min.js}"></script>
+    <script th:src="@{js/bootstrap.js}"></script>
+<!--    <script th:src="@{js/loading.js}"></script>-->
+    <script th:src="@{js/noticeAccount.js}"></script>
+    <script th:src="@{js/notification.js}"></script>
+    <script th:src="@{js/topics.js}"></script>
+<!--    <script src="../static/js/jquery-3.4.1.min.js"></script>-->
+<!--    <script src="../static/js/bootstrap.js"></script>-->
+<!--    <script src="../static/js/topics.js"></script>-->
+<!--    <link rel="stylesheet" href="../static/css/bootstrap.css">-->
+<!--    <link rel="stylesheet" href="../static/css/custom.css">-->
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var upn = /*[[${upn}]]*/ null;
+        var username = /*[[${username}]]*/ null;
+        /*]]>*/
+    </script>
+</head>
+<body>
+<div th:replace="navbar.html :: navbar"></div>
+
+<div style="padding-left: 10%;padding-bottom: 20px;width:80%;margin-left: 5%;padding-top: 120px;">
+    <h3 style="margin-top: 20px;">Hot Topics</h3>
+    <hr>
+    <div id="hot_topics_group">
+    </div>
+
+    <h3 style="margin-top: 80px;">Suggested Topics</h3>
+    <hr>
+    <div id="suggested_topics_group">
+    </div>
+
+    <h3 style="margin-top: 80px;">Newly Discovered Topics</h3>
+    <hr>
+    <div id="new_topics_group">
+    </div>
+
+    <a href="#" onclick="showAllTopics()"><h4 style="margin-top: 100px;" id="browser_h">All Topics<span style="margin-left: 10px;">
+        <i class="fas fa-angle-double-down" style="font-size: 16px;" id="browser_i"></i></span></h4></a>
+    <hr>
+    <div id="all_topics_group" style="overflow: auto;max-height: 500px;display: none;">
+    </div>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTopicsModal" style="margin-top: 50px;">
+        Add new topics
+    </button>
+
+
+    <!--    <h3 style="margin-top: 80px;">Add Topics</h3>-->
+<!--    <hr>-->
+<!--    <div>-->
+<!--        <div id="add_topics_group" style="margin-bottom: 20px;">-->
+<!--        </div>-->
+<!--        <a href="#" onclick="addTopicInput()"><i class="fas fa-plus"></i></a>-->
+<!--    </div>-->
+</div>
+
+<!--<div id="custom-overlay">-->
+<!--    <div class="loading-spinner">-->
+<!--        Loading (custom)...-->
+<!--    </div>-->
+<!--</div>-->
+
+<div th:replace="common.html :: notifications"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="addTopicsModal" tabindex="-1" role="dialog" aria-labelledby="addTopicsModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addTopicsModalLabel">Add Topics</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="addTopics_div" style="margin-bottom: 20px;">
+                    <input type="text" class="form-control" style="margin-top: 20px;">
+                </div>
+                <a href="#" onclick="addTopicInput()"><i class="fas fa-plus"></i></a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="addTopics()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $('#account_nav_li').removeClass('active');
+    $('.mynav_li').removeClass('active');
+    $('#Topics_nav_li').addClass('active');
+</script>
+</html>

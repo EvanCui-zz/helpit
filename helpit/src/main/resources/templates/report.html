@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+    <link rel="shortcut icon" th:href="@{assets/img/logo.png}">
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/custom.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script th:src="@{js/jquery-3.4.1.min.js}"></script>
+    <script th:src="@{js/jquery.session.js}"></script>
+    <script type="text/javascript" th:src="@{js/popper.min.js}"></script>
+    <script th:src="@{js/bootstrap.js}"></script>
+    <script th:src="@{js/noticeAccount.js}"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script th:src="@{js/notification.js}"></script>
+    <script th:src="@{js/report.js}"></script>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var upn = /*[[${upn}]]*/ null;
+        var username = /*[[${username}]]*/ null;
+        /*]]>*/
+    </script>
+</head>
+<body>
+<div th:replace="navbar.html :: navbar"></div>
+
+<div style="padding-bottom: 80px;width:75%;margin-left: 12%;padding-top: 140px;display: inline-block;vertical-align: top;">
+    <h3 style="margin-top: 20px;">General Report</h3>
+    <hr>
+<!--    <div style="margin-top: 15px;">total number of users:<span id="userNum" style="margin-left: 15px;"></span></div>-->
+<!--    <div>-->
+<!--        <select class="form-control" style="width:20%;margin-top: 25px;display: inline-block;" id="user_interval_select">-->
+<!--            <option value="week">last week</option>-->
+<!--            <option value="month">last month</option>-->
+<!--            <option value="year">last year</option>-->
+<!--            <option value="all">all</option>-->
+<!--        </select>-->
+<!--        <div style="text-align: center;display: inline-block;width:60%;font-size:20px;">User score chart</div>-->
+<!--    </div>-->
+<!--    <div id="user_chart" style="margin-top: 20px;">-->
+<!--        <div class="nodata_span" id="user_chart_nodata">No data</div>-->
+<!--    </div>-->
+    <div th:replace="common.html :: user_score_chart"></div>
+
+    <div th:replace="common.html :: topic_chart"></div>
+
+    <div th:replace="common.html :: keyword_chart"></div>
+<!--    <input type="number" style="margin-top:30px;width:20%;display: inline-block;" class="form-control" value="10" id="topic_num_input"><span style="margin-left: 7px;">(the number of hot topics you want to see)</span>-->
+<!--    <div id="topic_general_chart" style="min-width: 310px; height: 380px; margin-top:18px;">-->
+<!--&lt;!&ndash;        <span class="nodata_span" id="gtopic_chart_nodata">No data</span>&ndash;&gt;-->
+<!--    </div>-->
+
+<!--    <input type="number" style="margin-top:30px;width:20%;display: inline-block;" class="form-control" value="12" id="keyword_num_input"><span style="margin-left: 7px;">(the number of hot keywords you want to see)</span>-->
+<!--    <div id="keyword_general_chart" style="min-width: 310px; height: 380px; margin-top:18px;">-->
+<!--&lt;!&ndash;        <span class="nodata_span" id="gkeyword_chart_nodata">No data</span>&ndash;&gt;-->
+<!--    </div>-->
+</div>
+
+<div th:replace="common.html :: notifications"></div>
+</body>
+<script>
+    $('#account_nav_li').removeClass('active');
+    $('.mynav_li').removeClass('active');
+    $('#Report_nav_li').addClass('active');
+</script>
+</html>

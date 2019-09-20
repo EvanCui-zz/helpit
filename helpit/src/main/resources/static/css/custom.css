@@ -1,0 +1,212 @@
+.logo{
+    font-family: "Curlz MT";
+    font-size: 32px;
+}
+.hot_topics_title{
+    font-family: "Kristen ITC";
+    font-size: 20px;
+}
+
+.mynav{
+    background-color: #788B91;
+}
+.mynav_div{
+    display: inline-block;
+    /*margin-left: 1%;*/
+}
+/*.mynav_ul{*/
+/*    display: inline-block;*/
+/*}*/
+/*.mynav_li{*/
+/*    display: inline-block;*/
+/*    width:17%;*/
+/*    text-align: center;*/
+/*}*/
+
+.mainPanel{
+    display:inline-block;
+    width:65%;
+    margin-left: 4%;
+    /*margin-top: 120px;*/
+    padding-top: 150px;
+    /*background-color: #E4E4ED;*/
+    /*min-height: 700px;*/
+    height:100%;
+}
+.post_div{
+    margin-top: 7px;
+    width:99%;
+    margin-left: 5px;
+    border: 1px solid #eee;
+    border-left-color: #343a40;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}
+.post_div p{
+    margin-bottom: 2px;
+}
+.card_div{
+    padding: 10px;
+}
+.post_card{
+    margin-top: 20px;
+}
+
+.rankPanel_topics{
+    display:inline-block;
+    width:13%;
+    margin-top: 150px;
+    margin-right: 0.5%;
+    float: right;
+}
+.rankPanel_keywords{
+    display:inline-block;
+    width:13%;
+    margin-top: 150px;
+    margin-left: 0.5%;
+    float: left;
+}
+
+#topics_group{
+    margin-top: 20px;
+    width:80%;
+}
+.subscribe_div{
+    margin-top: 7px;
+    /*margin-left:1%;*/
+    /*width:12%;*/
+    /*display: inline-block;*/
+}
+/*.subscribe_checkbox{*/
+/*    margin-left:1%;*/
+/*    width:12%;*/
+/*}*/
+
+.tag_filter_div{
+    display: inline-block;
+    border: #95999c solid 1px;
+    padding-left: 3px;
+    margin-left: 1%;
+}
+.source_filter_div{
+    display: inline-block;
+    border: #95999c solid 1px;
+    padding-left: 3px;
+    margin-left: 1%;
+}
+
+#top_button{
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width:50px;
+    height:60px;
+    border: lightgray 1px solid;
+    text-align: center;
+    color:grey;
+}
+#top_button:hover{
+    color:black;
+}
+
+
+.filter_checkbox_div{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.topic_rank_li{
+    cursor: pointer;
+}
+.topic_rank_li:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+.keyword_rank_li{
+    cursor: pointer;
+}
+.keyword_rank_li:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.voteDown_i{
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.undo_vote_i{
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    color: rgba(0,0,0,0.7);
+}
+.undo_vote_i:hover{
+    color:black;
+}
+
+.red-point{
+    position: relative;
+}
+
+.red-point::before{
+    content: " ";
+    border: 3px solid red;/*设置红色*/
+    border-radius:3px;/*设置圆角*/
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+}
+
+.rightNum {
+    display: inline-block;
+    color: white;
+    font-size: 10px;
+    background-color: rgb(230, 90, 36);
+    width: 11px;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
+}
+
+.nodata_span{
+    text-align: center;
+    color:gray;
+    font-size: 20px;
+    line-height:50px;
+    height: 50px;
+    display: none;
+    background: rgba(180,180,180,0.4);
+}
+
+#bell_nav_li{
+    cursor: pointer;
+}
+#notification_bar{
+    z-index: 99;
+    position: fixed;
+    right: 0;
+    width:480px;
+    padding:25px 5px 15px 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.16);
+    border-color: rgba(204,204,204,.8);
+    background-color: white;
+    display: none;
+    overflow-y:auto;
+}
+.notification_div{
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+.keyword_div{
+    display: inline-block;
+    width: 19%;
+    margin-top: 15px;
+}
+.keyword_div a{
+    color:black;
+}
+.keyword_div a:hover{
+    color:#007bff;
+}

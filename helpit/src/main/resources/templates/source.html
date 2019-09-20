@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Source</title>
+    <link rel="shortcut icon" th:href="@{assets/img/logo.png}">
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/custom.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<!--    <link rel="stylesheet" th:href="@{css/loading.css}">-->
+    <script th:src="@{js/jquery-3.4.1.min.js}"></script>
+    <script th:src="@{js/jquery.session.js}"></script>
+    <script type="text/javascript" th:src="@{js/popper.min.js}"></script>
+    <script th:src="@{js/bootstrap.js}"></script>
+    <script th:src="@{js/noticeAccount.js}"></script>
+    <script th:src="@{js/notification.js}"></script>
+    <script th:src="@{js/sources.js}"></script>
+<!--    <script th:src="@{js/loading.js}"></script>-->
+<!--    <script src="../static/js/jquery-3.4.1.min.js"></script>-->
+<!--    <script src="../static/js/bootstrap.js"></script>-->
+<!--    <link rel="stylesheet" href="../static/css/bootstrap.css">-->
+<!--    <link rel="stylesheet" href="../static/css/custom.css">-->
+<!--    <script src="../static/js/sources.js"></script>-->
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var upn = /*[[${upn}]]*/ null;
+        var username = /*[[${username}]]*/ null;
+        /*]]>*/
+    </script>
+</head>
+<body>
+<div th:replace="navbar.html :: navbar"></div>
+
+<div style="padding-left: 10%;padding-bottom: 70px;width:80%;margin-left: 5%;padding-top: 120px;">
+    <h3 style="margin-top: 20px;">All Sources</h3>
+    <hr>
+    <div id="all_sources_group">
+    </div>
+
+<!--    <div style="margin-top: 80px;"><h3 style="display: inline-block">Add new Sources</h3>-->
+<!--        <span style="margin-left: 10px;font-size: 16px;">you can submit other sources you want to subscribe here.</span>-->
+<!--    </div>-->
+<!--    <hr>-->
+<!--    <div>-->
+<!--        developing...-->
+<!--    </div>-->
+</div>
+
+<!--<div id="custom-overlay">-->
+<!--    <div class="loading-spinner">-->
+<!--        Loading (custom)...-->
+<!--    </div>-->
+<!--</div>-->
+
+<div th:replace="common.html :: notifications"></div>
+</body>
+<script>
+    $('#account_nav_li').removeClass('active');
+    $('.mynav_li').removeClass('active');
+    $('#Sources_nav_li').addClass('active');
+</script>
+</html>

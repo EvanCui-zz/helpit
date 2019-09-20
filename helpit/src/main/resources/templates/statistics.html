@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Statistics</title>
+    <link rel="shortcut icon" th:href="@{assets/img/logo.png}">
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/custom.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script th:src="@{js/jquery-3.4.1.min.js}"></script>
+    <script th:src="@{js/jquery.session.js}"></script>
+    <script type="text/javascript" th:src="@{js/popper.min.js}"></script>
+    <script th:src="@{js/bootstrap.js}"></script>
+    <script th:src="@{js/noticeAccount.js}"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script th:src="@{js/notification.js}"></script>
+    <script th:src="@{js/statistics.js}"></script>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var upn = /*[[${upn}]]*/ null;
+        var username = /*[[${username}]]*/ null;
+        /*]]>*/
+    </script>
+</head>
+<body>
+<div th:replace="navbar.html :: navbar"></div>
+
+<div style="padding-bottom: 80px;width:75%;margin-left: 12%;padding-top: 140px;display: inline-block;vertical-align: top;">
+    <h3>Personal statistics
+        <!--        <span style="margin-left: 5px">(last week)</span>-->
+    </h3>
+    <hr>
+
+    <select class="form-control" style="width:20%;margin-top: 10px;" id="score_interval_select">
+        <option value="week">last week</option>
+        <option value="month">last month</option>
+        <option value="year">last year</option>
+        <option value="all">all</option>
+    </select>
+    <div id="score_personal_chart" style="min-width: 310px; height: 380px; margin-top:18px;">
+        <div class="nodata_span" id="pscore_chart_nodata">No data</div>
+    </div>
+
+    <select class="form-control" style="width:20%;margin-top: 30px;" id="topic_interval_select">
+        <option value="week">last week</option>
+        <option value="month">last month</option>
+        <option value="year">last year</option>
+    </select>
+    <div id="topic_score_personal_chart" style="width: 49.5%; margin-top:18px;display: inline-block;vertical-align: top;">
+        <div class="nodata_span" id="ptopic0_chart_nodata">No data</div>
+    </div>
+    <div id="topic_count_personal_chart" style="width: 50%; margin-top:18px;display: inline-block;vertical-align: top;">
+        <div class="nodata_span" id="ptopic1_chart_nodata">No data</div>
+    </div>
+
+    <select class="form-control" style="width:20%;margin-top: 30px;" id="source_interval_select">
+        <option value="week">last week</option>
+        <option value="month">last month</option>
+        <option value="year">last year</option>
+        <option value="all">all</option>
+    </select>
+    <div id="source_score_personal_chart" style="width: 49.5%; height: 380px; margin-top:18px;display: inline-block;vertical-align: top;">
+        <div class="nodata_span" id="psource0_chart_nodata">No data</div>
+    </div>
+    <div id="source_count_personal_chart" style="width: 50%; height: 380px; margin-top:18px;display: inline-block;vertical-align: top;">
+        <div class="nodata_span" id="psource1_chart_nodata">No data</div>
+    </div>
+</div>
+
+<div th:replace="common.html :: notifications"></div>
+</body>
+<script>
+    $('.mynav_li').removeClass('active');
+    $('#account_nav_li').addClass('active');
+</script>
+</html>

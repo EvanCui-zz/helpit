@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Discover</title>
+    <link rel="shortcut icon" th:href="@{assets/img/logo.png}">
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/custom.css}">
+<!--    <link rel="stylesheet" th:href="@{css/loading.css}">-->
+    <link rel="stylesheet" th:href="@{css/autocomplete.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script th:src="@{js/jquery-3.4.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{js/popper.min.js}"></script>
+    <script th:src="@{js/bootstrap.js}"></script>
+    <script th:src="@{js/jquery.autocomplete.js}"></script>
+    <script th:src="@{js/jquery.session.js}"></script>
+    <script th:src="@{js/noticeAccount.js}"></script>
+    <script th:src="@{js/notification.js}"></script>
+    <script th:src="@{js/all.js}"></script>
+<!--    <script th:src="@{js/loading.js}"></script>-->
+    <script th:src="@{js/getPosts.js}"></script>
+    <script th:src="@{js/autocomplete.js}"></script>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var upn = /*[[${upn}]]*/ null;
+        var username = /*[[${username}]]*/ null;
+        var keyword = /*[[${keyword}]]*/ null;
+        /*]]>*/
+    </script>
+
+</head>
+<body>
+<div th:replace="navbar.html :: navbar"></div>
+
+<div th:replace="common.html :: keywordRankPanel"></div>
+
+<div th:replace="common.html :: mainPanel"></div>
+
+<div th:replace="common.html :: topicRankPanel"></div>
+
+<div th:replace="common.html :: topButton"></div>
+
+<div th:replace="common.html :: notifications"></div>
+
+<div th:replace="common.html :: inviteModal"></div>
+
+<!--<div id="custom-overlay">-->
+<!--    <div class="loading-spinner">-->
+<!--        Loading (custom)...-->
+<!--    </div>-->
+<!--</div>-->
+
+</body>
+<script>
+    $('#account_nav_li').removeClass('active');
+    $('.mynav_li').removeClass('active');
+    $('#Discover_nav_li').addClass('active');
+</script>
+</html>

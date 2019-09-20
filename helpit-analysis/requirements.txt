@@ -1,0 +1,3 @@
+pymongo
+requests
+yampy3==1.0

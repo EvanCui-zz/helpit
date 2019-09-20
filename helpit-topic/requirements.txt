@@ -1,0 +1,4 @@
+pymongo
+textdistance
+gensim
+nltk

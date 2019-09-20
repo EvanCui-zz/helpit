@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Common</title>
+</head>
+<body>
+
+<div th:fragment="keywordRankPanel" class="card rankPanel_keywords">
+    <div class="card-header hot_topics_title">
+        Hot Keywords
+    </div>
+    <ul class="list-group list-group-flush" id="keywords_rank">
+<!--        <li class="list-group-item">developing...</li>-->
+    </ul>
+</div>
+
+<div th:fragment="mainPanel" class="mainPanel">
+    <div class="jumbotron" style="padding-bottom: 20px;">
+        <div class="container">
+            <div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" id="topic_filter_label">filter by topics</label>
+                    <div class="col-sm-9" style="display: inline-block;">
+                        <div style="display: inline-block;vertical-align: bottom;overflow: auto;max-height:150px;"
+                             id="topics_filter_div">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">filter by sources</label>
+                    <div class="col-sm-8" style="display: inline-block;">
+                        <div style="display: inline-block;vertical-align: bottom;" id="sources_filter_div">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">filter by keyword</label>
+                    <div class="col-sm-5" style="display: inline-block;">
+                        <input type="text" class="form-control" name="country" id="autocomplete-ajax" style="position: absolute; z-index: 2; background: transparent;"/>
+                        <input type="text" class="form-control" name="country" id="autocomplete-ajax-x" disabled="disabled" style="color: #CCC; position: absolute; background: transparent; z-index: 1;"/>
+                    </div>
+                    <div class="col-sm-4" style="display: inline-block;margin-left: 10px;" id="selction-ajax"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="posts_panel">
+        </div>
+    </div> <!-- /container -->
+</div>
+
+<div th:fragment="topicRankPanel" class="card rankPanel_topics">
+    <div class="card-header hot_topics_title">
+        Hot Topics
+    </div>
+    <ul class="list-group list-group-flush" id="topics_rank">
+    </ul>
+</div>
+
+<div th:fragment="topButton" id="top_button" style="padding-top: 2px;">
+    <span><i class="fas fa-angle-double-up"></i></span><br/>
+    TOP
+</div>
+
+<!--<div th:fragment="notifications" aria-live="polite" aria-atomic="true" style="position: fixed; bottom: 30px; left: 25px;">-->
+<!--    <div id="notifications">-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- Modal -->
+<div th:fragment="inviteModal" class="modal fade" id="inviteModal" tabindex="-1" role="dialog" aria-labelledby="inviteModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inviteModalLabel">invite</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="invite_div" style="margin-bottom: 20px;">
+                    <input type="text" class="form-control" style="margin-top: 20px;" id="receiver_input" placeholder="enter the engineer's email" onfocus="inviteInputFocus()">
+                    <span style="color: red;display: none;" id="invite_error"></span>
+                </div>
+<!--                <a href="#" onclick="addInviteInput()"><i class="fas fa-plus"></i></a>-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="sendInvitation()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="notifications" id="notification_bar"></div>
+
+<div th:fragment="user_score_chart">
+    <select class="form-control" style="width:20%;margin-top: 25px;display: inline-block;" id="user_interval_select">
+        <option value="week">last week</option>
+        <option value="month">last month</option>
+        <option value="year">last year</option>
+        <option value="all">all</option>
+    </select>
+    <div style="text-align: center;display: inline-block;width:60%;font-size:20px;">User score chart</div>
+    <div id="user_chart" style="margin-top: 20px;">
+        <div class="nodata_span" id="user_chart_nodata">No data</div>
+    </div>
+</div>
+
+<div th:fragment="topic_chart">
+    <input type="number" style="margin-top:30px;width:20%;display: inline-block;" class="form-control" value="10" id="topic_num_input"><span style="margin-left: 7px;">(the number of hot topics you want to see)</span>
+    <div id="topic_general_chart" style="min-width: 310px; height: 380px; margin-top:18px;">
+        <!--        <span class="nodata_span" id="gtopic_chart_nodata">No data</span>-->
+    </div>
+</div>
+
+<div th:fragment="keyword_chart">
+    <input type="number" style="margin-top:30px;width:20%;display: inline-block;" class="form-control" value="12" id="keyword_num_input"><span style="margin-left: 7px;">(the number of hot keywords you want to see)</span>
+    <div id="keyword_general_chart" style="min-width: 310px; height: 380px; margin-top:18px;">
+        <!--        <span class="nodata_span" id="gkeyword_chart_nodata">No data</span>-->
+    </div>
+</div>
+</body>
+</html>
